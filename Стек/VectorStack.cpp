@@ -1,29 +1,23 @@
 #include "VectorStack.h"
 
-VectorStack::VectorStack() {}
-
-void VectorStack::pushStack(const ValueType& value) {
-	pushBack(value);
+void VectorStack::push(const ValueType& value) {
+	this->MyVector::pushBack(value);
 }
 
-void VectorStack::popStack() {
-	popBack();
+void VectorStack::pop() {
+	this->MyVector::popBack();
 }
 
 const ValueType& VectorStack::top() const {
-	return (*this)[size() - 1];
+	return (*this)[this->MyVector::size() - 1];
 }
 
-bool VectorStack::isEmptyStack() const {
-	if (sizeStack() == 0)
+bool VectorStack::isEmpty() const {
+	if (this->MyVector::size() == 0)
 		return true;
 	return false;
 }
 
-size_t VectorStack::sizeStack() const {
-	return this->size();
+size_t VectorStack::size() const {
+	return this->MyVector::size();
 }
-
-VectorStack::~VectorStack() {}
-
-

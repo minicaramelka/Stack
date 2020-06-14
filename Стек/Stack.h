@@ -27,10 +27,6 @@ public:
 	Stack(const Stack& copyStack);
 	Stack& operator=(const Stack& copyStack);
 
-	// Здесь как обычно
-	 Stack(Stack&& moveStack) noexcept;
-	 Stack& operator=(Stack&& moveStack) noexcept;
-
 	~Stack();
 
 	// добавление в хвост

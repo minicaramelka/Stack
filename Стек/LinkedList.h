@@ -33,37 +33,37 @@ public:
 	LinkedList& operator=(LinkedList&& moveList) noexcept; //+
 	~LinkedList(); //+
 
-	////
+				   ////
 
-	// доступ к значению элемента по индексу
+				   // доступ к значению элемента по индексу
 	ValueType& operator[](const size_t pos) const; //+
 
-	// доступ к узлу по индексу
+												   // доступ к узлу по индексу
 	LinkedList::Node* getNode(const size_t pos) const; //+
 
-	// вставка элемента по индексу, сначала ищем, куда вставлять (О(n)), потом вставляем (O(1))
+													   // вставка элемента по индексу, сначала ищем, куда вставлять (О(n)), потом вставляем (O(1))
 	void insert(const size_t pos, const ValueType& value); //+
 
-	// вставка элемента после узла, (O(1))
+														   // вставка элемента после узла, (O(1))
 	void insertAfterNode(Node* node, const ValueType& value); //+
 
-	// вставка в конец (О(n))
+															  // вставка в конец (О(n))
 	void pushBack(const ValueType& value); //+
 
-	// вставка в начало (О(1))
+										   // вставка в начало (О(1))
 	void pushFront(const ValueType& value); //+
 
-	// удаление
+											// удаление
 	void remove(const size_t pos); //
 	void removeNextNode(Node* node); //+
 	void removeFront(); //+
 	void removeBack(); //+
 
-	// поиск, О(n)
+					   // поиск, О(n)
 	long long int findIndex(const ValueType& value) const; //+
 	Node* findNode(const ValueType& value) const; //+
 
-	// разворот списка
+												  // разворот списка
 	void reverse();						// изменение текущего списка    +
 	LinkedList reverse() const;			// полчение нового списка (для константных объектов)
 	LinkedList getReverseList() const;	// чтобы неконстантный объект тоже мог возвращать новый развернутый список

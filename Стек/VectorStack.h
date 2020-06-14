@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include<cstdlib>
 #include "StackImplementation.h"
 #include "MyVector.h"
  // меняете на include вашего вектора
@@ -10,12 +11,11 @@
 class VectorStack : public StackImplementation, public MyVector
 {
 	public:
-	VectorStack();
-	void pushStack(const ValueType& value);
-	void popStack();
-	const ValueType& top() const;
-	bool isEmptyStack() const;
-	size_t sizeStack() const;
-	~VectorStack();
-	
+	VectorStack() {};
+	void push(const ValueType& value) ;
+	void pop() ;
+	const ValueType& top() const ;
+	bool isEmpty() const ;
+	size_t size() const ;
+	~VectorStack() {};
 };
