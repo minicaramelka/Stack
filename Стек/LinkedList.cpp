@@ -54,6 +54,7 @@ LinkedList& LinkedList::operator=(const LinkedList& copyList) {
 		return *this;
 	}
 	LinkedList* bufList = new LinkedList(copyList);
+	forceNodeDelete(_head);
 	this->_size = bufList->_size;
 	this->_head = bufList->_head;
 	return *this;
@@ -91,7 +92,7 @@ LinkedList::Node* LinkedList::getNode(const size_t pos) const {
 		throw out_of_range("pos < 0");
 	}
 	else if (pos >= this->_size) {
-		throw out_of_range("pos >= size");
+		throw out_of_range("pos >= size") ;
 	}
 	Node* bufNode = this->_head;
 	for (int i = 0; i < pos; ++i) {
@@ -188,7 +189,7 @@ void LinkedList::removeFront() {
 		_head = tmp;
 	}
 	else
-		throw out_of_range("The list is empty!");
+		throw out_of_range("The list is empty!") ;
 }
 
 void LinkedList::removeBack() {
